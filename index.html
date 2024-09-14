@@ -62,17 +62,76 @@
     </div>
 
     <script>
-        const correctUsername = "admin";  // Belirlediğiniz kullanıcı adı
-        const correctPassword = "password123";  // Belirlediğiniz şifre
-        const redirectURL = "https://www.basariuzem.com/online-ders";  // Yönlendirmek istediğiniz URL
+        // Kullanıcı adı ve şifre çiftleri
+        const users = {
+            "başarıuzem1": "afklp",
+            "başarıuzem2": "ldwpe",
+            "başarıuzem3": "qjfmx",
+            "başarıuzem4": "bnzye",
+            "başarıuzem5": "wmcvu",
+            "başarıuzem6": "jzotv",
+            "başarıuzem7": "hxqre",
+            "başarıuzem8": "dpzla",
+            "başarıuzem9": "kgtsv",
+            "başarıuzem10": "rmcpa",
+            "başarıuzem11": "xfqeo",
+            "başarıuzem12": "nzmdk",
+            "başarıuzem13": "vtqwl",
+            "başarıuzem14": "yfgls",
+            "başarıuzem15": "hrzco",
+            "başarıuzem16": "dkxiu",
+            "başarıuzem17": "oqmye",
+            "başarıuzem18": "wzfhx",
+            "başarıuzem19": "lcvzu",
+            "başarıuzem20": "pwsnt",
+            "başarıuzem21": "jkrve",
+            "başarıuzem22": "xbdqc",
+            "başarıuzem23": "knswa",
+            "başarıuzem24": "gtpre",
+            "başarıuzem25": "vsmil",
+            // Devamı...
+            "başarıuzem226": "pbkrf",
+            "başarıuzem227": "qezlm",
+            "başarıuzem228": "jxqpr",
+            "başarıuzem229": "ovukd",
+            "başarıuzem230": "rcapw",
+            "başarıuzem231": "zgxti",
+            "başarıuzem232": "hvdjo",
+            "başarıuzem233": "kqefy",
+            "başarıuzem234": "mjxar",
+            "başarıuzem235": "lvodu",
+            "başarıuzem236": "xwcrp",
+            "başarıuzem237": "tghmo",
+            "başarıuzem238": "bnvqs",
+            "başarıuzem239": "fdliq",
+            "başarıuzem240": "pjurm",
+            "başarıuzem241": "oxcwz",
+            "başarıuzem242": "myfvt",
+            "başarıuzem243": "dswke",
+            "başarıuzem244": "nzkvl",
+            "başarıuzem245": "wvgrp",
+            "başarıuzem246": "bhvrz",
+            "başarıuzem247": "symlj",
+            "başarıuzem248": "pcndw",
+            "başarıuzem249": "fkzrq",
+            "başarıuzem250": "jhlwt"
+        };
+
+        // Şu anki oturumda aktif kullanıcı
+        let currentUser = null;
 
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            if (username === correctUsername && password === correctPassword) {
-                window.location.href = redirectURL;  // Yönlendirmek istediğiniz URL
+            if (users[username] && users[username] === password) {
+                if (currentUser === null) {
+                    currentUser = username; // Kullanıcıyı oturumda olarak ayarla
+                    window.location.href = "https://www.basariuzem.com/online-ders"; // Yönlendirme URL'si
+                } else {
+                    alert("Bir kullanıcı zaten giriş yapmış durumda.");
+                }
             } else {
                 alert("Kullanıcı adı veya şifre yanlış.");
             }
