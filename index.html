@@ -168,15 +168,4 @@
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (users[username] && users[username] === password) {
-                alert('Giriş başarılı!');
-            } else {
-                alert('Kullanıcı adı veya şifre yanlış.');
-            }
-        });
-    </script>
-</body>
-</html>
+            const username =
